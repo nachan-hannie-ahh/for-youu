@@ -323,30 +323,31 @@ body.shake {
     }
 }
 
+/* MEME */
+
 .birthday-meme-placeholder {
     width:min(260px,55vw);
     height:min(260px,55vw);
     border-radius:24px;
     background:rgba(255,253,248,.55);
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:8px;
+    overflow:hidden;
     opacity:0;
     transform:scale(0) rotate(-8deg);
 }
 
-.birthday-scene.active .birthday-meme-placeholder {
-    animation:memePop .8s cubic-bezier(.17,.89,.32,1.35) .9s forwards;
+.birthday-meme-placeholder img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+    border-radius:24px;
 }
 
-.birthday-meme-placeholder span { font-size:42px; }
-
-.birthday-meme-placeholder small {
-    font-size:13px;
-    font-weight:700;
-    opacity:.5;
+.birthday-scene.active .birthday-meme-placeholder {
+    animation:memePop .8s cubic-bezier(.17,.89,.32,1.35) .9s forwards;
 }
 
 @keyframes memePop {
@@ -887,6 +888,7 @@ body.shake {
 
 <!-- SCENE 3 -->
 <section class="scene birthday-scene" id="scene-birthday">
+
     <div class="birthday-text">
         HAPPY BIRTHDAYYY
         <br>
@@ -894,13 +896,16 @@ body.shake {
     </div>
 
     <div class="birthday-meme-placeholder" id="birthdayMeme">
-        <span>🖼️</span>
-        <small>meme here</small>
+        <img
+            src="assets/meme.png"
+            alt="birthday meme"
+        >
     </div>
 
     <div class="still-message" id="stillMessage">
         there's still something else... →
     </div>
+
 </section>
 
 <!-- SCENE 4 — LETTER -->
