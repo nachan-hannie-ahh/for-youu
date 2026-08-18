@@ -15,7 +15,9 @@
     --paper:#fffdf8;
 }
 
-* { box-sizing:border-box; }
+* {
+    box-sizing:border-box;
+}
 
 html,body {
     width:100%;
@@ -29,6 +31,8 @@ body {
     color:var(--brown);
     font-family:Arial,Helvetica,sans-serif;
 }
+
+/* BACKGROUND */
 
 .background {
     position:fixed;
@@ -50,6 +54,8 @@ body {
         50% 100%,39% 62%,0% 50%,39% 38%
     );
 }
+
+/* SCENE SYSTEM */
 
 .scene {
     position:fixed;
@@ -97,8 +103,15 @@ body {
 }
 
 @keyframes openFadeUp {
-    from { opacity:0;transform:translateY(60px); }
-    to { opacity:1;transform:translateY(0); }
+    from {
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* QUESTION */
@@ -111,10 +124,12 @@ body {
     box-shadow:0 18px 50px rgba(99,42,3,.07);
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     padding:48px 38px;
 }
 
@@ -129,8 +144,15 @@ body {
 }
 
 @keyframes questionIn {
-    from { opacity:0;transform:scale(.85); }
-    to { opacity:1;transform:scale(1); }
+    from {
+        opacity:0;
+        transform:scale(.85);
+    }
+
+    to {
+        opacity:1;
+        transform:scale(1);
+    }
 }
 
 .answers {
@@ -151,14 +173,21 @@ body {
     transition:transform .2s ease;
 }
 
-.answer:first-child { background:var(--cyan); }
-.answer:last-child { background:var(--yellow); }
+.answer:first-child {
+    background:var(--cyan);
+}
+
+.answer:last-child {
+    background:var(--yellow);
+}
 
 .answer:hover {
     transform:translateY(-4px) rotate(-1deg);
 }
 
-.answer:active { transform:scale(.97); }
+.answer:active {
+    transform:scale(.97);
+}
 
 /* GIFT */
 
@@ -185,7 +214,9 @@ body {
 }
 
 @keyframes cursorBlink {
-    50% { opacity:0; }
+    50% {
+        opacity:0;
+    }
 }
 
 .gift {
@@ -224,17 +255,21 @@ body {
 }
 
 @keyframes explosionPlay {
+
     0% {
         opacity:0;
         transform:translate(-50%,-50%) scale(.15);
     }
+
     12% {
         opacity:1;
         transform:translate(-50%,-50%) scale(.8);
     }
+
     45% {
         transform:translate(-50%,-50%) scale(1.15);
     }
+
     100% {
         opacity:0;
         transform:translate(-50%,-50%) scale(1.35);
@@ -246,13 +281,34 @@ body.shake {
 }
 
 @keyframes screenShake {
-    0% { transform:translate(0); }
-    15% { transform:translate(-10px,7px); }
-    30% { transform:translate(9px,-8px); }
-    45% { transform:translate(-7px,-5px); }
-    60% { transform:translate(8px,6px); }
-    75% { transform:translate(-4px,3px); }
-    100% { transform:translate(0); }
+
+    0% {
+        transform:translate(0);
+    }
+
+    15% {
+        transform:translate(-10px,7px);
+    }
+
+    30% {
+        transform:translate(9px,-8px);
+    }
+
+    45% {
+        transform:translate(-7px,-5px);
+    }
+
+    60% {
+        transform:translate(8px,6px);
+    }
+
+    75% {
+        transform:translate(-4px,3px);
+    }
+
+    100% {
+        transform:translate(0);
+    }
 }
 
 /* FLASH / BLACKOUT */
@@ -271,9 +327,18 @@ body.shake {
 }
 
 @keyframes flashBang {
-    0% { opacity:0; }
-    15% { opacity:1; }
-    100% { opacity:0; }
+
+    0% {
+        opacity:0;
+    }
+
+    15% {
+        opacity:1;
+    }
+
+    100% {
+        opacity:0;
+    }
 }
 
 .blackout {
@@ -286,7 +351,9 @@ body.shake {
     transition:opacity .5s ease;
 }
 
-.blackout.show { opacity:1; }
+.blackout.show {
+    opacity:1;
+}
 
 /* BIRTHDAY */
 
@@ -310,13 +377,16 @@ body.shake {
 }
 
 @keyframes birthdayTextIn {
+
     0% {
         opacity:0;
         transform:scale(.7) translateY(20px);
     }
+
     70% {
         transform:scale(1.08) translateY(0);
     }
+
     100% {
         opacity:1;
         transform:scale(1) translateY(0);
@@ -328,12 +398,16 @@ body.shake {
 .birthday-meme-placeholder {
     width:min(260px,55vw);
     height:min(260px,55vw);
+
     border-radius:24px;
     background:rgba(255,253,248,.55);
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     overflow:hidden;
+
     opacity:0;
     transform:scale(0) rotate(-8deg);
 }
@@ -351,14 +425,17 @@ body.shake {
 }
 
 @keyframes memePop {
+
     0% {
         opacity:0;
         transform:scale(0) rotate(-8deg);
     }
+
     65% {
         opacity:1;
         transform:scale(1.15) rotate(4deg);
     }
+
     100% {
         opacity:1;
         transform:scale(1) rotate(0);
@@ -369,17 +446,195 @@ body.shake {
     position:absolute;
     bottom:8%;
     left:50%;
-    transform:translateX(-50%) translateY(10px);
+
+    transform:
+        translateX(-50%)
+        translateY(10px);
+
     font-size:16px;
     font-weight:700;
+
     opacity:0;
     white-space:nowrap;
-    transition:opacity .6s ease,transform .6s ease;
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
 }
 
 .still-message.show {
     opacity:1;
-    transform:translateX(-50%) translateY(0);
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+/* MUSIC */
+
+.music-scene {
+    flex-direction:column;
+    gap:25px;
+}
+
+.music-box {
+    width:min(380px,78vw);
+    min-height:360px;
+
+    background:var(--paper);
+    border-radius:28px;
+
+    box-shadow:0 25px 60px rgba(99,42,3,.13);
+
+    padding:35px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:25px;
+
+    text-align:center;
+}
+
+.music-title {
+    font-size:27px;
+    font-weight:900;
+}
+
+.record-area {
+    position:relative;
+    width:240px;
+    height:150px;
+}
+
+.record {
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:repeating-radial-gradient(
+        circle,
+        #222 0px,
+        #222 2px,
+        #333 3px,
+        #222 4px
+    );
+
+    left:10px;
+    top:15px;
+
+    cursor:pointer;
+
+    transition:
+        transform .8s
+        cubic-bezier(.17,.89,.32,1.25);
+}
+
+.record::after {
+    content:"";
+
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    background:var(--pink);
+
+    left:42.5px;
+    top:42.5px;
+}
+
+.record.in-player {
+    transform:
+        translateX(95px)
+        rotate(360deg);
+}
+
+.player {
+    position:absolute;
+
+    right:0;
+    top:5px;
+
+    width:125px;
+    height:135px;
+
+    border-radius:18px;
+
+    background:var(--yellow);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:40px;
+
+    box-shadow:0 8px 0 var(--brown);
+}
+
+.music-instruction {
+    font-size:14px;
+    font-weight:700;
+    opacity:.6;
+}
+
+.play-button {
+    border:none;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+    color:var(--brown);
+
+    font-size:22px;
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 0 var(--brown);
+}
+
+.play-button:active {
+    transform:translateY(3px);
+    box-shadow:0 2px 0 var(--brown);
+}
+
+.next-music {
+    border:none;
+
+    border-radius:999px;
+
+    padding:12px 25px;
+
+    background:var(--pink);
+    color:var(--brown);
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(8px);
+
+    transition:.4s ease;
+}
+
+.next-music.show {
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
 }
 
 /* LETTER */
@@ -388,23 +643,45 @@ body.shake {
     flex-direction:column;
 }
 
+/*
+   ONLY THE LETTER USES TIMES NEW ROMAN
+   so Vietnamese characters display correctly.
+*/
+
+.note,
+.letter,
+.letter-heading,
+.letter-text,
+.next-letter {
+    font-family:"Times New Roman",Times,serif;
+}
+
 .note {
     width:min(330px,75vw);
     aspect-ratio:3/4;
+
     background:var(--paper);
+
     border-radius:5px;
+
     box-shadow:0 18px 45px rgba(99,42,3,.13);
+
     transform:rotate(-2deg);
+
     cursor:pointer;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     transition:transform .3s ease;
 }
 
 .note:hover {
-    transform:rotate(0deg) translateY(-8px);
+    transform:
+        rotate(0deg)
+        translateY(-8px);
 }
 
 .note-small {
@@ -428,21 +705,39 @@ body.shake {
 .letter {
     width:min(470px,86vw);
     height:min(620px,78vh);
+
     background:var(--paper);
+
     border-radius:18px;
+
     box-shadow:0 25px 65px rgba(99,42,3,.15);
+
     padding:48px 42px;
+
     display:flex;
     flex-direction:column;
+
     opacity:0;
-    transform:scale(.75) rotate(-3deg);
+
+    transform:
+        scale(.75)
+        rotate(-3deg);
+
     pointer-events:none;
-    transition:opacity .5s ease,transform .7s cubic-bezier(.17,.89,.32,1.25);
+
+    transition:
+        opacity .5s ease,
+        transform .7s
+        cubic-bezier(.17,.89,.32,1.25);
 }
 
 .letter.open {
     opacity:1;
-    transform:scale(1) rotate(0);
+
+    transform:
+        scale(1)
+        rotate(0);
+
     pointer-events:auto;
 }
 
@@ -453,6 +748,7 @@ body.shake {
 
 .letter-heading {
     margin:0 0 25px;
+
     font-size:28px;
     font-weight:900;
 }
@@ -460,7 +756,11 @@ body.shake {
 .letter-text {
     font-size:17px;
     line-height:1.8;
+
     white-space:pre-line;
+
+    word-break:normal;
+    overflow-wrap:break-word;
 }
 
 .letter-footer {
@@ -471,137 +771,17 @@ body.shake {
 
 .next-letter {
     border:none;
+
     border-radius:999px;
+
     padding:11px 22px;
+
     background:var(--pink);
     color:var(--brown);
+
     font-weight:900;
+
     cursor:pointer;
-}
-
-/* MUSIC */
-
-.music-scene {
-    flex-direction:column;
-    gap:25px;
-}
-
-.music-box {
-    width:min(380px,78vw);
-    min-height:360px;
-    background:var(--paper);
-    border-radius:28px;
-    box-shadow:0 25px 60px rgba(99,42,3,.13);
-    padding:35px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:25px;
-    text-align:center;
-}
-
-.music-title {
-    font-size:27px;
-    font-weight:900;
-}
-
-.record-area {
-    position:relative;
-    width:240px;
-    height:150px;
-}
-
-.record {
-    position:absolute;
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:repeating-radial-gradient(
-        circle,
-        #222 0px,
-        #222 2px,
-        #333 3px,
-        #222 4px
-    );
-    left:10px;
-    top:15px;
-    cursor:pointer;
-    transition:transform .8s cubic-bezier(.17,.89,.32,1.25);
-}
-
-.record::after {
-    content:"";
-    position:absolute;
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    background:var(--pink);
-    left:42.5px;
-    top:42.5px;
-}
-
-.record.in-player {
-    transform:translateX(95px) rotate(360deg);
-}
-
-.player {
-    position:absolute;
-    right:0;
-    top:5px;
-    width:125px;
-    height:135px;
-    border-radius:18px;
-    background:var(--yellow);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:40px;
-    box-shadow:0 8px 0 var(--brown);
-}
-
-.music-instruction {
-    font-size:14px;
-    font-weight:700;
-    opacity:.6;
-}
-
-.play-button {
-    border:none;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:var(--cyan);
-    color:var(--brown);
-    font-size:22px;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow:0 5px 0 var(--brown);
-}
-
-.play-button:active {
-    transform:translateY(3px);
-    box-shadow:0 2px 0 var(--brown);
-}
-
-.next-music {
-    border:none;
-    border-radius:999px;
-    padding:12px 25px;
-    background:var(--pink);
-    color:var(--brown);
-    font-weight:900;
-    cursor:pointer;
-    opacity:0;
-    pointer-events:none;
-    transform:translateY(8px);
-    transition:.4s ease;
-}
-
-.next-music.show {
-    opacity:1;
-    pointer-events:auto;
-    transform:translateY(0);
 }
 
 /* CAKE */
@@ -618,60 +798,100 @@ body.shake {
 
 .cake {
     position:relative;
+
     width:240px;
     height:190px;
+
     cursor:pointer;
 }
 
 .cake-base {
     position:absolute;
+
     bottom:15px;
     left:20px;
+
     width:200px;
     height:100px;
+
     background:var(--pink);
-    border-radius:20px 20px 28px 28px;
+
+    border-radius:
+        20px 20px
+        28px 28px;
+
     box-shadow:0 8px 0 var(--brown);
 }
 
 .cake-cream {
     position:absolute;
+
     bottom:95px;
     left:20px;
+
     width:200px;
     height:45px;
+
     background:var(--paper);
+
     border-radius:50%;
 }
 
 .candle {
     position:absolute;
+
     left:50%;
     bottom:125px;
+
     transform:translateX(-50%);
+
     width:18px;
     height:65px;
+
     background:var(--cyan);
+
     border-radius:6px;
 }
 
 .candle::after {
     content:"";
+
     position:absolute;
+
     width:18px;
     height:25px;
+
     left:0;
     top:-25px;
+
     background:var(--yellow);
-    border-radius:50% 50% 45% 45%;
-    animation:flame .5s infinite alternate;
+
+    border-radius:
+        50% 50%
+        45% 45%;
+
+    animation:
+        flame .5s
+        infinite alternate;
 }
 
-.candle.off::after { opacity:0; }
+.candle.off::after {
+    opacity:0;
+}
 
 @keyframes flame {
-    from { transform:scale(.9) rotate(-3deg); }
-    to { transform:scale(1.1) rotate(3deg); }
+
+    from {
+        transform:
+            scale(.9)
+            rotate(-3deg);
+    }
+
+    to {
+        transform:
+            scale(1.1)
+            rotate(3deg);
+    }
 }
 
 .cake.blown {
@@ -679,7 +899,12 @@ body.shake {
 }
 
 @keyframes cakePop {
-    50% { transform:scale(1.08) rotate(-2deg); }
+
+    50% {
+        transform:
+            scale(1.08)
+            rotate(-2deg);
+    }
 }
 
 /* WISH */
@@ -691,12 +916,18 @@ body.shake {
 .wish-note {
     width:min(470px,86vw);
     height:min(570px,78vh);
+
     background:var(--paper);
+
     border-radius:8px;
+
     box-shadow:0 25px 65px rgba(99,42,3,.15);
+
     padding:40px;
+
     display:flex;
     flex-direction:column;
+
     gap:20px;
 }
 
@@ -709,15 +940,25 @@ body.shake {
 #wishInput {
     flex:1;
     width:100%;
+
     resize:none;
-    border:2px dashed rgba(99,42,3,.2);
+
+    border:
+        2px dashed
+        rgba(99,42,3,.2);
+
     border-radius:12px;
+
     background:transparent;
     color:var(--brown);
+
     padding:18px;
+
     font-family:Arial,Helvetica,sans-serif;
+
     font-size:17px;
     line-height:1.7;
+
     outline:none;
 }
 
@@ -728,9 +969,13 @@ body.shake {
 .wish-done,
 .wish-close {
     border:none;
+
     border-radius:999px;
+
     padding:13px 25px;
+
     font-weight:900;
+
     cursor:pointer;
 }
 
@@ -742,9 +987,12 @@ body.shake {
 .wish-reading {
     flex:1;
     overflow-y:auto;
+
     font-size:18px;
     line-height:1.8;
+
     white-space:pre-wrap;
+
     padding:10px;
 }
 
@@ -758,15 +1006,22 @@ body.shake {
 .end-screen {
     position:fixed;
     inset:0;
+
     background:#000;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     flex-direction:column;
+
     opacity:0;
     pointer-events:none;
+
     transition:opacity 1s ease;
+
     z-index:300;
+
     color:white;
     text-align:center;
 }
@@ -779,43 +1034,69 @@ body.shake {
 .end-notification {
     background:var(--paper);
     color:var(--brown);
+
     padding:25px 30px;
+
     border-radius:18px;
+
     font-weight:900;
-    box-shadow:0 15px 50px rgba(255,255,255,.12);
-    animation:notificationPop .7s cubic-bezier(.17,.89,.32,1.25);
+
+    box-shadow:
+        0 15px 50px
+        rgba(255,255,255,.12);
+
+    animation:
+        notificationPop .7s
+        cubic-bezier(.17,.89,.32,1.25);
 }
 
 @keyframes notificationPop {
+
     from {
         opacity:0;
-        transform:scale(.7) translateY(20px);
+        transform:
+            scale(.7)
+            translateY(20px);
     }
+
     to {
         opacity:1;
-        transform:scale(1) translateY(0);
+        transform:
+            scale(1)
+            translateY(0);
     }
 }
 
 .close-web {
     margin-top:45px;
+
     font-size:17px;
     font-weight:700;
+
     opacity:.8;
 }
 
 /* MOBILE */
 
 @media (max-width:500px) {
+
     .phone {
         width:78vw;
         border-radius:30px;
         padding:35px 25px;
     }
 
-    .question { font-size:38px; }
-    .answer { font-size:17px; }
-    .birthday-text { font-size:44px; }
+    .question {
+        font-size:38px;
+    }
+
+    .answer {
+        font-size:17px;
+    }
+
+    .birthday-text {
+        font-size:44px;
+    }
 
     .birthday-meme-placeholder {
         width:55vw;
@@ -840,7 +1121,9 @@ body.shake {
 <body>
 
 <div class="background" id="background"></div>
+
 <div class="flash" id="flash"></div>
+
 <div class="blackout" id="blackout"></div>
 
 <img
@@ -850,14 +1133,26 @@ body.shake {
     alt=""
 >
 
-<!-- SCENE 0 -->
+<!-- SCENE 0 — OPEN -->
+
 <section class="scene active" id="scene-open">
-    <button class="open-button" id="openButton">OPEN</button>
+
+    <button
+        class="open-button"
+        id="openButton"
+    >
+        OPEN
+    </button>
+
 </section>
 
-<!-- SCENE 1 -->
+
+<!-- SCENE 1 — QUESTION -->
+
 <section class="scene" id="scene-question">
+
     <div class="phone">
+
         <div class="question">
             day is ur<br>
             birthday...<br>
@@ -865,17 +1160,35 @@ body.shake {
         </div>
 
         <div class="answers">
-            <button class="answer">CHOOSE YA</button>
-            <button class="answer">OF COURSE</button>
+
+            <button class="answer">
+                CHOOSE YA
+            </button>
+
+            <button class="answer">
+                OF COURSE
+            </button>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- SCENE 2 -->
-<section class="scene gift-scene" id="scene-gift">
+
+<!-- SCENE 2 — GIFT -->
+
+<section
+    class="scene gift-scene"
+    id="scene-gift"
+>
+
     <div class="gift-message">
+
         <span id="typingText"></span>
+
         <span class="typing-cursor"></span>
+
     </div>
 
     <img
@@ -884,62 +1197,53 @@ body.shake {
         src="assets/gift.png"
         alt="gift"
     >
+
 </section>
 
-<!-- SCENE 3 -->
-<section class="scene birthday-scene" id="scene-birthday">
+
+<!-- SCENE 3 — BIRTHDAY -->
+
+<section
+    class="scene birthday-scene"
+    id="scene-birthday"
+>
 
     <div class="birthday-text">
+
         HAPPY BIRTHDAYYY
         <br>
         MY GIRLLL :DDD!!!
+
     </div>
 
-    <div class="birthday-meme-placeholder" id="birthdayMeme">
+    <div
+        class="birthday-meme-placeholder"
+        id="birthdayMeme"
+    >
+
         <img
             src="assets/meme.png"
             alt="birthday meme"
         >
+
     </div>
 
-    <div class="still-message" id="stillMessage">
+    <div
+        class="still-message"
+        id="stillMessage"
+    >
         there's still something else... →
     </div>
 
 </section>
 
-<!-- SCENE 4 — LETTER -->
-<section class="scene letter-scene" id="scene-letter">
 
-    <div class="note" id="note">
-        <div class="note-small">a little something</div>
-        <div class="note-title">for u ♡</div>
-        <div class="note-star">✦</div>
-    </div>
+<!-- SCENE 4 — MUSIC -->
 
-    <div class="letter" id="letter">
-
-        <div class="letter-content">
-
-            <h2 class="letter-heading" id="letterHeading">
-                Dear Len (Diệp Diệp mặt trời bự)
-            </h2>
-
-            <div class="letter-text" id="letterText"></div>
-
-        </div>
-
-        <div class="letter-footer">
-            <button class="next-letter" id="nextLetter">
-                NEXT →
-            </button>
-        </div>
-
-    </div>
-</section>
-
-<!-- SCENE 5 — MUSIC -->
-<section class="scene music-scene" id="scene-music">
+<section
+    class="scene music-scene"
+    id="scene-music"
+>
 
     <div class="music-box">
 
@@ -949,7 +1253,10 @@ body.shake {
 
         <div class="record-area">
 
-            <div class="record" id="record"></div>
+            <div
+                class="record"
+                id="record"
+            ></div>
 
             <div class="player">
                 ♫
@@ -957,15 +1264,24 @@ body.shake {
 
         </div>
 
-        <div class="music-instruction" id="musicInstruction">
+        <div
+            class="music-instruction"
+            id="musicInstruction"
+        >
             click the record to put it in
         </div>
 
-        <button class="play-button" id="playButton">
+        <button
+            class="play-button"
+            id="playButton"
+        >
             ▶
         </button>
 
-        <button class="next-music" id="nextMusic">
+        <button
+            class="next-music"
+            id="nextMusic"
+        >
             NEXT →
         </button>
 
@@ -973,19 +1289,92 @@ body.shake {
 
 </section>
 
+
+<!-- SCENE 5 — LETTER -->
+
+<section
+    class="scene letter-scene"
+    id="scene-letter"
+>
+
+    <div
+        class="note"
+        id="note"
+    >
+
+        <div class="note-small">
+            a little something
+        </div>
+
+        <div class="note-title">
+            for u ♡
+        </div>
+
+        <div class="note-star">
+            ✦
+        </div>
+
+    </div>
+
+
+    <div
+        class="letter"
+        id="letter"
+    >
+
+        <div class="letter-content">
+
+            <h2 class="letter-heading">
+                Dear Len (Diệp Diệp mặt trời bự)
+            </h2>
+
+            <div
+                class="letter-text"
+                id="letterText"
+            ></div>
+
+        </div>
+
+        <div class="letter-footer">
+
+            <button
+                class="next-letter"
+                id="nextLetter"
+            >
+                NEXT →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- SCENE 6 — CAKE -->
-<section class="scene cake-scene" id="scene-cake">
+
+<section
+    class="scene cake-scene"
+    id="scene-cake"
+>
 
     <div class="cake-title">
         make a wish first ♡
     </div>
 
-    <div class="cake" id="cake">
+    <div
+        class="cake"
+        id="cake"
+    >
 
         <div class="cake-base"></div>
+
         <div class="cake-cream"></div>
 
-        <div class="candle" id="candle"></div>
+        <div
+            class="candle"
+            id="candle"
+        ></div>
 
     </div>
 
@@ -995,8 +1384,13 @@ body.shake {
 
 </section>
 
+
 <!-- SCENE 7 — WISH -->
-<section class="scene wish-scene" id="scene-wish">
+
+<section
+    class="scene wish-scene"
+    id="scene-wish"
+>
 
     <div class="wish-note">
 
@@ -1009,7 +1403,10 @@ body.shake {
             placeholder="write something here..."
         ></textarea>
 
-        <button class="wish-done" id="wishDone">
+        <button
+            class="wish-done"
+            id="wishDone"
+        >
             DONE ✦
         </button>
 
@@ -1017,8 +1414,13 @@ body.shake {
 
 </section>
 
+
 <!-- SCENE 8 — WISH READING -->
-<section class="scene wish-scene" id="scene-wish-read">
+
+<section
+    class="scene wish-scene"
+    id="scene-wish-read"
+>
 
     <div class="wish-note">
 
@@ -1026,9 +1428,15 @@ body.shake {
             your wish ♡
         </div>
 
-        <div class="wish-reading" id="wishReading"></div>
+        <div
+            class="wish-reading"
+            id="wishReading"
+        ></div>
 
-        <button class="wish-close" id="wishClose">
+        <button
+            class="wish-close"
+            id="wishClose"
+        >
             CLOSE
         </button>
 
@@ -1036,8 +1444,13 @@ body.shake {
 
 </section>
 
+
 <!-- END -->
-<div class="end-screen" id="endScreen">
+
+<div
+    class="end-screen"
+    id="endScreen"
+>
 
     <div class="end-notification">
         have a wonderful day :>
@@ -1049,14 +1462,34 @@ body.shake {
 
 </div>
 
+
 <!-- AUDIO -->
-<audio id="boomSound" preload="auto">
-    <source src="assets/boom.mp3" type="audio/mpeg">
+
+<audio
+    id="boomSound"
+    preload="auto"
+>
+
+    <source
+        src="assets/boom.mp3"
+        type="audio/mpeg"
+    >
+
 </audio>
 
-<audio id="birthdayMusic" preload="auto">
-    <source src="assets/birthday-music.mp3" type="audio/mpeg">
+
+<audio
+    id="birthdayMusic"
+    preload="auto"
+>
+
+    <source
+        src="assets/birthday-music.mp3"
+        type="audio/mpeg"
+    >
+
 </audio>
+
 
 <script>
 
@@ -1071,7 +1504,7 @@ const starColors = [
     "#ffb5db"
 ];
 
-for(let i=0;i<14;i++){
+for(let i = 0; i < 14; i++){
 
     const star =
         document.createElement("div");
@@ -1079,20 +1512,21 @@ for(let i=0;i<14;i++){
     star.classList.add("star");
 
     star.style.left =
-        Math.random()*94 + "%";
+        Math.random() * 94 + "%";
 
     star.style.top =
-        Math.random()*94 + "%";
+        Math.random() * 94 + "%";
 
     star.style.background =
         starColors[
             Math.floor(
-                Math.random()*starColors.length
+                Math.random() *
+                starColors.length
             )
         ];
 
     const size =
-        Math.random()*8 + 7;
+        Math.random() * 8 + 7;
 
     star.style.width =
         size + "px";
@@ -1110,14 +1544,18 @@ function goToScene(id){
 
     document
         .querySelectorAll(".scene")
-        .forEach(scene=>{
+        .forEach(scene => {
+
             scene.classList.remove("active");
+
         });
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
         document
             .getElementById(id)
             .classList.add("active");
+
     },100);
 }
 
@@ -1126,8 +1564,10 @@ function goToScene(id){
 
 document
     .getElementById("openButton")
-    .addEventListener("click",()=>{
+    .addEventListener("click",() => {
+
         goToScene("scene-question");
+
     });
 
 
@@ -1137,7 +1577,7 @@ const typingText =
     document.getElementById("typingText");
 
 const message =
-    "so... i have brought u a gift hereee :>> hope u like it.";
+    "so... i have brought u a gift hereee :>> hope you like it.";
 
 let typingStarted = false;
 
@@ -1159,11 +1599,14 @@ function startTyping(){
 
             index++;
 
-            setTimeout(typeNext,45);
+            setTimeout(
+                typeNext,
+                45
+            );
 
         }else{
 
-            setTimeout(()=>{
+            setTimeout(() => {
 
                 document
                     .getElementById("gift")
@@ -1179,18 +1622,21 @@ function startTyping(){
 
 document
     .querySelectorAll(".answer")
-    .forEach(button=>{
+    .forEach(button => {
 
-        button.addEventListener("click",()=>{
+        button.addEventListener(
+            "click",
+            () => {
 
-            goToScene("scene-gift");
+                goToScene("scene-gift");
 
-            setTimeout(
-                startTyping,
-                700
-            );
+                setTimeout(
+                    startTyping,
+                    700
+                );
 
-        });
+            }
+        );
 
     });
 
@@ -1214,61 +1660,80 @@ const blackout =
 
 let giftClicked = false;
 
-gift.addEventListener("click",()=>{
+gift.addEventListener(
+    "click",
+    () => {
 
-    if(giftClicked)
-        return;
+        if(giftClicked)
+            return;
 
-    giftClicked = true;
+        giftClicked = true;
 
-    explosion.src =
-        "assets/explosion.gif?boom="
-        + Date.now();
+        explosion.src =
+            "assets/explosion.gif?boom="
+            + Date.now();
 
-    explosion.classList.add("show");
+        explosion.classList.add("show");
 
-    boomSound.currentTime = 0;
+        boomSound.currentTime = 0;
 
-    boomSound
-        .play()
-        .catch(()=>{});
+        boomSound
+            .play()
+            .catch(() => {});
 
-    document.body.classList.add("shake");
+        document.body
+            .classList
+            .add("shake");
 
-    setTimeout(()=>{
-        flash.classList.add("show");
-    },300);
+        setTimeout(() => {
 
-    setTimeout(()=>{
-        blackout.classList.add("show");
-    },700);
+            flash.classList.add("show");
 
-    setTimeout(()=>{
+        },300);
 
-        blackout.classList.remove("show");
-        explosion.classList.remove("show");
-        document.body.classList.remove("shake");
+        setTimeout(() => {
 
-        goToScene("scene-birthday");
+            blackout.classList.add("show");
 
-    },3700);
+        },700);
 
-});
+        setTimeout(() => {
+
+            blackout.classList.remove("show");
+
+            explosion.classList.remove("show");
+
+            document.body
+                .classList
+                .remove("shake");
+
+            goToScene(
+                "scene-birthday"
+            );
+
+        },3700);
+
+    }
+);
 
 
-/* BIRTHDAY → STILL MESSAGE */
+/* BIRTHDAY → MUSIC */
 
 const birthdayScene =
-    document.getElementById("scene-birthday");
+    document.getElementById(
+        "scene-birthday"
+    );
 
 const stillMessage =
-    document.getElementById("stillMessage");
+    document.getElementById(
+        "stillMessage"
+    );
 
 let birthdayTimerStarted = false;
 
 birthdayScene.addEventListener(
     "transitionend",
-    ()=>{
+    () => {
 
         if(
             birthdayScene.classList.contains("active")
@@ -1278,9 +1743,11 @@ birthdayScene.addEventListener(
 
             birthdayTimerStarted = true;
 
-            setTimeout(()=>{
+            setTimeout(() => {
 
-                stillMessage.classList.add("show");
+                stillMessage
+                    .classList
+                    .add("show");
 
             },1800);
 
@@ -1289,19 +1756,118 @@ birthdayScene.addEventListener(
     }
 );
 
-
-/* BIRTHDAY → LETTER */
-
 birthdayScene.addEventListener(
     "click",
-    ()=>{
+    () => {
 
         if(
-            !birthdayScene.classList.contains("active")
+            !birthdayScene
+                .classList
+                .contains("active")
         )
             return;
 
-        goToScene("scene-letter");
+        goToScene(
+            "scene-music"
+        );
+
+    }
+);
+
+
+/* MUSIC */
+
+const record =
+    document.getElementById("record");
+
+const playButton =
+    document.getElementById("playButton");
+
+const nextMusic =
+    document.getElementById("nextMusic");
+
+const musicInstruction =
+    document.getElementById(
+        "musicInstruction"
+    );
+
+const birthdayMusic =
+    document.getElementById(
+        "birthdayMusic"
+    );
+
+let recordInserted = false;
+let musicStarted = false;
+
+
+/* RECORD → PLAYER */
+
+record.addEventListener(
+    "click",
+    () => {
+
+        if(recordInserted)
+            return;
+
+        recordInserted = true;
+
+        record.classList.add(
+            "in-player"
+        );
+
+        musicInstruction.textContent =
+            "the record is ready ♫";
+
+    }
+);
+
+
+/* PLAY */
+
+playButton.addEventListener(
+    "click",
+    () => {
+
+        if(!recordInserted)
+            return;
+
+        if(musicStarted)
+            return;
+
+        musicStarted = true;
+
+        birthdayMusic.currentTime = 0;
+
+        birthdayMusic
+            .play()
+            .catch(() => {});
+
+        musicInstruction.textContent =
+            "now playing ♫";
+
+        playButton.style.display =
+            "none";
+
+        nextMusic
+            .classList
+            .add("show");
+
+    }
+);
+
+
+/* MUSIC → LETTER */
+
+nextMusic.addEventListener(
+    "click",
+    () => {
+
+        if(!musicStarted)
+            return;
+
+        goToScene(
+            "scene-letter"
+        );
 
     }
 );
@@ -1319,7 +1885,7 @@ let letterOpened = false;
 
 note.addEventListener(
     "click",
-    ()=>{
+    () => {
 
         if(letterOpened)
             return;
@@ -1331,11 +1897,14 @@ note.addEventListener(
         note.style.transform =
             "scale(1.08) rotate(0deg)";
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            note.style.display = "none";
+            note.style.display =
+                "none";
 
-            letter.classList.add("open");
+            letter.classList.add(
+                "open"
+            );
 
         },350);
 
@@ -1343,7 +1912,7 @@ note.addEventListener(
 );
 
 
-/* LETTER CONTENT — ONE PAGE */
+/* LETTER CONTENT */
 
 const vietnameseLetter = `It's been 3 years tao chơi với m (hè cuối lớp 6 -> now). Tao thấy ảo vãi vì lần lâu nhất của tao là gần 1 năm, ONLINE ý :) Hè lớp 7 tao tưởng mất kết nối m ai ngờ "Nothing beat jet2 holiday" :)) Nói chung là cũng lâu dài đeí, kiên trì đeí :)
 
@@ -1363,108 +1932,24 @@ THANK YOU SO MUCH :))
 NACHAN RISSANT
 nách nách là mặt trời nhỏ`;
 
-document.getElementById("letterText").textContent =
+document
+    .getElementById("letterText")
+    .textContent =
     vietnameseLetter;
 
 
-/* LETTER → MUSIC */
+/* LETTER → CAKE */
 
 const nextLetter =
     document.getElementById("nextLetter");
 
 nextLetter.addEventListener(
     "click",
-    ()=>{
+    () => {
 
-        goToScene("scene-music");
-
-    }
-);
-
-
-/* MUSIC */
-
-const record =
-    document.getElementById("record");
-
-const playButton =
-    document.getElementById("playButton");
-
-const nextMusic =
-    document.getElementById("nextMusic");
-
-const musicInstruction =
-    document.getElementById("musicInstruction");
-
-const birthdayMusic =
-    document.getElementById("birthdayMusic");
-
-let recordInserted = false;
-let musicStarted = false;
-
-
-/* RECORD → PLAYER */
-
-record.addEventListener(
-    "click",
-    ()=>{
-
-        if(recordInserted)
-            return;
-
-        recordInserted = true;
-
-        record.classList.add("in-player");
-
-        musicInstruction.textContent =
-            "the record is ready ♫";
-
-    }
-);
-
-
-/* PLAY */
-
-playButton.addEventListener(
-    "click",
-    ()=>{
-
-        if(!recordInserted)
-            return;
-
-        if(musicStarted)
-            return;
-
-        musicStarted = true;
-
-        birthdayMusic.currentTime = 0;
-
-        birthdayMusic
-            .play()
-            .catch(()=>{});
-
-        musicInstruction.textContent =
-            "now playing ♫";
-
-        playButton.style.display =
-            "none";
-
-        nextMusic.classList.add("show");
-
-    }
-);
-
-
-/* MUSIC → CAKE */
-
-nextMusic.addEventListener(
-    "click",
-    ()=>{
-
-        if(!musicStarted)
-            return;
-
-        goToScene("scene-cake");
+        goToScene(
+            "scene-cake"
+        );
 
     }
 );
@@ -1479,26 +1964,34 @@ const candle =
     document.getElementById("candle");
 
 const cakeScene =
-    document.getElementById("scene-cake");
+    document.getElementById(
+        "scene-cake"
+    );
 
 let candleBlown = false;
 
 cake.addEventListener(
     "click",
-    ()=>{
+    () => {
 
         if(candleBlown)
             return;
 
         candleBlown = true;
 
-        candle.classList.add("off");
+        candle.classList.add(
+            "off"
+        );
 
-        cakeScene.classList.add("blown");
+        cakeScene.classList.add(
+            "blown"
+        );
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            goToScene("scene-wish");
+            goToScene(
+                "scene-wish"
+            );
 
         },1000);
 
@@ -1509,17 +2002,23 @@ cake.addEventListener(
 /* WISH → READING */
 
 const wishInput =
-    document.getElementById("wishInput");
+    document.getElementById(
+        "wishInput"
+    );
 
 const wishDone =
-    document.getElementById("wishDone");
+    document.getElementById(
+        "wishDone"
+    );
 
 const wishReading =
-    document.getElementById("wishReading");
+    document.getElementById(
+        "wishReading"
+    );
 
 wishDone.addEventListener(
     "click",
-    ()=>{
+    () => {
 
         const wish =
             wishInput.value.trim();
@@ -1530,7 +2029,9 @@ wishDone.addEventListener(
         wishReading.textContent =
             wish;
 
-        goToScene("scene-wish-read");
+        goToScene(
+            "scene-wish-read"
+        );
 
     }
 );
@@ -1539,25 +2040,26 @@ wishDone.addEventListener(
 /* WISH → CLOSE */
 
 const wishClose =
-    document.getElementById("wishClose");
+    document.getElementById(
+        "wishClose"
+    );
 
 const endScreen =
-    document.getElementById("endScreen");
+    document.getElementById(
+        "endScreen"
+    );
 
 wishClose.addEventListener(
     "click",
-    ()=>{
-
-        /*
-          MUSIC KEEPS PLAYING
-          UNTIL THE FINAL CLOSE
-        */
+    () => {
 
         birthdayMusic.pause();
 
         birthdayMusic.currentTime = 0;
 
-        endScreen.classList.add("show");
+        endScreen.classList.add(
+            "show"
+        );
 
     }
 );
